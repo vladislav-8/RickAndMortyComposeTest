@@ -1,5 +1,7 @@
 package com.practicum.rickandmortycomposetest.data.source.remote.dto
 
+import com.practicum.rickandmortycomposetest.domain.models.Character
+
 data class CharacterDto(
     val created: String,
     val episode: List<String>,
@@ -14,3 +16,16 @@ data class CharacterDto(
     val type: String,
     val url: String
 )
+
+fun CharacterDto.toCharacter(): Character {
+    return Character(
+        id = id,
+        name = name,
+        gender = gender,
+        status = status,
+        species = species,
+        origin = origin,
+        location = location,
+        image = image,
+    )
+}

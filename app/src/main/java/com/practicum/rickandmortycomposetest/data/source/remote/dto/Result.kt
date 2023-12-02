@@ -1,6 +1,6 @@
 package com.practicum.rickandmortycomposetest.data.source.remote.dto
 
-data class Result<T>(
+data class Result(
     val created: String,
     val episode: List<String>,
     val gender: String,
