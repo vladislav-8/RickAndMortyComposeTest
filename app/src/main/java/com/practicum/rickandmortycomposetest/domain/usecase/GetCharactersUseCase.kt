@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetCharactersUseCase @Inject constructor(
     private val repository: CharacterRepository
 ) {
-    suspend fun invoke(page: Int): Flow<Results<List<Characters>>> {
+    operator fun invoke(page: Int): Flow<Results<List<Characters>>> {
         return repository.getCharacters(page)
     }
 }
